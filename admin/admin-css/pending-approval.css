@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Table styles */
+.approval-table,
+.all-ads-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.approval-table th,
+.all-ads-table th,
+.approval-table td,
+.all-ads-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.approval-table th,
+.all-ads-table th {
+    background-color: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.approval-table tr:nth-child(even),
+.all-ads-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.approval-table tr:hover,
+.all-ads-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Button styles */
+.approve-button,
+.deny-button,
+.remove-button,
+.view-images-button {
+    width: 100%;
+    padding: 8px 12px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 20px;
+}
+
+.approve-button {
+    background-color: #28a745;
+}
+
+.approve-button:hover {
+    background-color: #218838;
+}
+
+.deny-button {
+    background-color: #dc3545;
+}
+
+.deny-button:hover {
+    background-color: #c82333;
+}
+
+.remove-button {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.remove-button:hover {
+    background-color: #e0a800;
+}
+
+.view-images-button {
+    background-color: #17a2b8;
+}
+
+.view-images-button:hover {
+    background-color: #138496;
+}
+
+/* Form styles */
+form {
+    margin: 0;
+}
+
+/* Consistent table and button styles for All Ads */
+.all-ads-table .remove-button {
+    background-color: #c10101;
+    color: #fffdfd;
+}
+
+.all-ads-table .remove-button:hover {
+    background-color: #f9f7f7;
+}

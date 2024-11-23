@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.80)), url(../../src-image/background-image.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+}
+
+.div-container{
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-container {
+    max-width: 1000px;
+    margin: 30px 30px;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Profile and Subscription Sections */
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background:linear-gradient(to right,#fde4e4,#ffffff);  
+    opacity: 0.85;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.adevertiser-info{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.subscription-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.subscription-section .subscription-details{
+    width: 32%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.profile-section h2,
+.subscription-section h2,
+.ads-section h2 {
+    color: #262626;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.profile-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    object-fit: cover;
+}
+
+.user-details{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section p {
+    margin: 8px 0;
+    color: #262626;
+}
+
+/* Ads Section Table */
+.ads-section table {
+    border: solid;
+    border-color: #dddddd90;
+    padding: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ads-section table td select {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #262626;
+}
+
+.ads-section table td .action-btn {
+    display: inline-block;
+    width: 70px;
+    padding: 6px 12px;
+    margin: 2px;
+    font-size: 0.9rem;
+    color: #262626;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.ads-section table th,
+.ads-section table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f9dada;
+    font-size: 0.9rem;
+}
+
+.ads-section table th {
+    background-color: #f9caca;
+    color: #333;
+}
+
+.ads-section table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.ads-section table tr:hover {
+    background-color: #f0f0f0;
+}
+
+.actions a,
+.actions select{
+    padding: 5px 10px;
+    margin-right: 8px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.actions a:hover,
+.actions select:hover {
+    background-color: #0056b3;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    color: #fff;
+    background-color:  #a50515;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.action-buttons button:hover {
+    background-color:  #ef051c;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ads-section table, 
+    .ads-section table th, 
+    .ads-section table td {
+        font-size: 0.9em;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+

@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+
+    background-image: linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.80)), url(../../src-image/background-image.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.side-filter-bar {
+    width: 250px;
+    background: rgba(121, 120, 120, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.side-filter-bar form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter-section label {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.filter-section select{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-section input[type="number"]{
+    width: 92%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #9a0202;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-section button:hover {
+    background-color: #7e0303;
+}
+
+.top-filter-bar{
+    display: block;
+    background: #f9f9f930;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.top-filter-bar form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-filter-bar label{
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+}
+
+.top-filter-bar form select{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Listings Section */
+.listings {
+    flex-grow: 1;
+}
+
+.listing {
+    display: flex;
+    gap: 5%;
+    margin-bottom: 20px;
+    background:linear-gradient(to right,#fde4e4,#ffffff);  
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.info-section {
+    flex-grow: 1;
+}
+
+.info-section h3, .info-section a  {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #1a1b24;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-section h3:hover {
+    color: #242634;
+}
+
+.info-section p {
+    margin: 5px 0;
+}
+
+.info-section button {
+    padding: 8px 12px;
+    background-color: #2839a7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.info-section button:hover {
+    background-color:  #1c2978;
+}
+
+.info-section button + button {
+    margin-left: 10px;
+    background-color: #c10101 ;
+}
+
+.info-section button + button:hover {
+    background-color: #820101 ;
+}
+
+/* Pagination Section */
+/* Pagination Section */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #c10101;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    background-color: #820101;
+}
+
+.pagination .active {
+    background-color: #820101;
+    pointer-events: none;
+}

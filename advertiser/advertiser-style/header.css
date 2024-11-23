@@ -1,0 +1,132 @@
+header{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-nav{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    z-index: 10;
+}
+
+.head-button{
+    width: 150px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #c10101 ;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.span-class{
+    background: #c10101 ;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.head-button:hover .span-class{
+    width: 100%;
+}
+.head-button:hover{
+    border: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.user-profile img {
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgb(68, 68, 68);
+    box-shadow: 0 0 10px white;
+    border-radius: 50%;
+    margin-right: 27px;
+    object-fit: cover;
+}
+
+.user-profile span {
+    color: white;
+    font-weight: bold;
+    margin-left: -16px;
+    padding: 5px 10px;
+}
+
+.user-profile span:hover{
+    columns: rgb(252, 86, 86);
+}
+
+.user-profile span:active{
+    columns: rgb(252, 86, 86);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    background-color: #c10101 ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-top-2{
+    border-bottom: 1px solid white;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background-color: #fc3434;
+}
+
+@media (max-width: 1000px) {
+    .head-button {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+}

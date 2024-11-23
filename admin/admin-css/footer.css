@@ -1,0 +1,147 @@
+footer{
+    width: 100%;
+    bottom: 0;
+    background: #1A1B24;
+    color: white;
+    padding: 40px 0 20px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+footer .row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+footer .col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+footer .col:nth-child(2){
+    flex-basis: 10%;
+} 
+
+.col:nth-child(3){
+    flex-basis: 9%;
+}
+
+footer .footer-logo{
+    width: 120px;
+    margin-bottom: 30px;
+}
+
+footer .col h3{
+    width: fit-content;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+footer .e-mail-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+footer .col ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 4px;
+    position: relative;
+}
+
+footer .col ul li a{
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+footer .col ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #c10101;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+footer .col ul li:hover::after{
+    width: 100%;
+}
+
+footer form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+footer form .fa-regular{
+    font-size: 18px;
+    margin-right: 10px;
+}
+footer form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+
+}
+footer form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+footer form button .fa-solid{
+    font-size: 16px;
+    color: #ccc;
+}
+footer .social-icons .fa-brands{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+footer hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+footer .copyright{
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 900px) {
+    
+    footer{
+        bottom: unset;
+    }
+    footer .col{
+        flex-basis: 100%;
+    }
+    
+    footer .col:nth-child(2), .col:nth-child(3){
+        flex-basis: 100%;
+    }
+}
