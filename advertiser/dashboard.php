@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] != 'advertiser') {
 
 $userId = $_SESSION['user_id'];
 
-
 // Check if availability status is being updated
 if (isset($_POST['update_availability'])) {
     $adId = (int)$_POST['ad_id'];
@@ -24,6 +23,58 @@ if (isset($_POST['update_availability'])) {
     }
     header("Location:dashboard.php?message=Availability updated successfully!");
     exit();
+}
+
+// Remove ad
+if (isset($_POST['remove_ad'])) {
+    $ad_id = $_POST['ad_id'];
+
+    // Start a transaction to safely delete with foreign key dependencies
+    mysqli_begin_transaction($connect);
+
+    try {
+        // Delete from related tables first due to foreign key constraints
+        $deleteImages = "DELETE FROM listing_images WHERE ad_id = ?";
+        $stmtImages = mysqli_prepare($connect, $deleteImages);
+        if ($stmtImages) {
+            mysqli_stmt_bind_param($stmtImages, "s", $ad_id);
+            mysqli_stmt_execute($stmtImages);
+            mysqli_stmt_close($stmtImages);
+        }
+
+        $deleteComments = "DELETE FROM comment WHERE ad_id = ?";
+        $stmtComments = mysqli_prepare($connect, $deleteComments);
+        if ($stmtComments) {
+            mysqli_stmt_bind_param($stmtComments, "s", $ad_id);
+            mysqli_stmt_execute($stmtComments);
+            mysqli_stmt_close($stmtComments);
+        }
+
+        $deleteFavorites = "DELETE FROM favorites WHERE ad_id = ?";
+        $stmtFavorites = mysqli_prepare($connect, $deleteFavorites);
+        if ($stmtFavorites) {
+            mysqli_stmt_bind_param($stmtFavorites, "s", $ad_id);
+            mysqli_stmt_execute($stmtFavorites);
+            mysqli_stmt_close($stmtFavorites);
+        }
+
+        // Now delete the main ad entry
+        $stmt = mysqli_prepare($connect, "DELETE FROM listings WHERE ad_id = ?");
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "s", $ad_id);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
+
+        // Commit the transaction
+        mysqli_commit($connect);
+        header("Location: ./dashboard.php?message=Ad removed successfully!");
+        exit();
+    } catch (Exception $e) {
+        // Rollback the transaction on error
+        mysqli_rollback($connect);
+        echo "Error removing ad: " . $e->getMessage();
+    }
 }
 
 // Fetch advertiser profile details
@@ -141,7 +192,6 @@ if ($stmtAds) {
                 <thead>
                     <tr>
                         <th>Title</th>
-                        
                         <th>Price</th>
                         <th>District</th>
                         <th>Availability</th>
@@ -153,7 +203,6 @@ if ($stmtAds) {
                     <?php while ($ad = mysqli_fetch_assoc($resultAds)): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($ad['title']); ?></td>
-                            
                             <td>Rs <?php echo number_format($ad['price']); ?></td>
                             <td><?php echo htmlspecialchars($ad['district_name']); ?></td>
                             <td>
@@ -169,6 +218,13 @@ if ($stmtAds) {
                             <td><?php echo htmlspecialchars($ad['approval_status']); ?></td> 
                             <td>
                                 <a href="../seeker/moredetails.php?ad_id=<?php echo $ad['ad_id']; ?>" class="action-btn">View More</a>
+                                
+                                <!-- Remove Ad Button -->
+                                <form action="dashboard.php" method="post" style="display:inline;">
+                                    <input type="hidden" name="ad_id" value="<?php echo $ad['ad_id']; ?>">
+                                    <input type="hidden" name="remove_ad" value="1">
+                                    <button type="submit" class="action-btn-2" onclick="return confirm('Are you sure you want to remove this ad?')">Remove Ad</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endwhile; ?>

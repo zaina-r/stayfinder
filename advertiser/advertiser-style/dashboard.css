@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "poppins", sans-serif;
@@ -13,7 +13,7 @@ body {
     flex-direction: column;
 }
 
-.div-container{
+.div-container {
     display: flex;
     justify-content: center;
 }
@@ -40,18 +40,18 @@ section {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    background:linear-gradient(to right,#fde4e4,#ffffff);  
+    background: linear-gradient(to right, #fde4e4, #ffffff);  
     opacity: 0.85;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.profile-section{
+.profile-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.adevertiser-info{
+.adevertiser-info {
     margin-top: 20px;
     display: flex;
     align-items: center;
@@ -59,12 +59,12 @@ section {
     gap: 50px;
 }
 
-.subscription-section{
+.subscription-section {
     display: flex;
     flex-direction: column;
 }
 
-.subscription-section .subscription-details{
+.subscription-section .subscription-details {
     width: 32%;
     margin: auto;
     margin-top: 20px;
@@ -94,7 +94,7 @@ section {
     object-fit: cover;
 }
 
-.user-details{
+.user-details {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -122,18 +122,25 @@ section p {
     color: #262626;
 }
 
-.ads-section table td .action-btn {
+.action-btn, .action-btn-2{
     display: inline-block;
-    width: 70px;
-    padding: 6px 12px;
+    width: 100px;
+    padding: 6px 0;
     margin: 2px;
     font-size: 0.9rem;
     color: #262626;
     text-align: center;
     text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    
 }
+
+.action-btn:hover{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+
 
 .ads-section table th,
 .ads-section table td {
@@ -156,22 +163,24 @@ section p {
     background-color: #f0f0f0;
 }
 
-.actions a,
-.actions select{
-    padding: 5px 10px;
-    margin-right: 8px;
-    color: #fff;
-    background-color: #007bff;
+/* Remove Ad Button */
+.ads-section table td form button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #e74c3c;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-.actions a:hover,
-.actions select:hover {
-    background-color: #0056b3;
+.ads-section table td form button:hover {
+    background-color: #c0392b;
 }
+
+
+
 
 /* Action Buttons */
 .action-buttons {
@@ -196,8 +205,6 @@ section p {
     background-color:  #ef051c;
 }
 
-
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .dashboard-container {
@@ -220,4 +227,3 @@ section p {
         gap: 10px;
     }
 }
-

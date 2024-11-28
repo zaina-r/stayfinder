@@ -93,7 +93,7 @@
         <div id="loginModal" class="modal">
             <div class="modal-content">
                 <p class="message">Your plan is expired. Buy a new plan</p>
-                <button class="cancel-btn" onclick="window.location.href='advertiser-dashboard.php'">Cancel</button>
+                <button class="cancel-btn" onclick="window.location.href='dashboard.php'">Cancel</button>
                 <button class="login-btn"  onclick="window.location.href='subscription-plans.php'">Buy Now</button>
             </div>
         </div>
